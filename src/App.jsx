@@ -1,4 +1,4 @@
-import GameContainer from './components/containers/gameContainer'
+import GameContainer from './components/containers/GameContainer'
 import { Container } from 'react-bootstrap';
 
 function App() {
