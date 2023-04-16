@@ -74,7 +74,7 @@ function GameContainer() {
         setDis(true)
 
         if (e.target.id === correct.capital) {
-            e.target.className = 'm-2 btn btn-success btn-lg';
+            e.target.className = 'm-1 btn btn-success';
             s ? uwup.play() : '';
             setPoints({
                 point: points.point + 1,
@@ -82,7 +82,7 @@ function GameContainer() {
             });
             return setTimeout(() => setBl(prev => !prev), 2000);
         } else {
-            e.target.className = 'm-2 btn btn-danger btn-lg';
+            e.target.className = 'm-1 btn btn-danger';
             setPoints({
                 ...points,
                 total: points.total + 1,
