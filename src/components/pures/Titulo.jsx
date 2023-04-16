@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 function Titulo({ country }) {
     return (
-        <Card.Title className='fs-1'>{country} ?</Card.Title>
+        <Card.Title className='fs-4'>{country} ?</Card.Title>
     )
 }
 

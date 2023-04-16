@@ -1,7 +1,9 @@
+import Image from "react-bootstrap/Image";
+
 function Flag({ flag }) {
     return (
         <>
-            <img className="mw-100 border border-dark" src={flag} />
+            <Image height={200} src={flag} thumbnail />
         </>
     )
 }

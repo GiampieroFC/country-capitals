@@ -1,12 +1,31 @@
 import GameContainer from './components/containers/GameContainer'
 import { Container } from 'react-bootstrap';
+import './style.css'
 
 function App() {
   return (
-    <Container fluid>
-      <GameContainer />
-
-    </Container>
+    <div className='animateme'>
+      <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <Container className='d-flex min-vh-100 flex-column'
+        fluid
+      >
+        <GameContainer />
+      </Container>
+    </div>
   )
 }
 

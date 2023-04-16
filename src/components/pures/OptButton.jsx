@@ -7,7 +7,7 @@ function OptButton({ id, city, fn, dis }) {
     }
 
     return (
-        <Button disabled={dis} className='m-2' id={id} variant="outline-secondary" size='lg' onClick={fnHandle}>{city}</Button>
+        <Button disabled={dis} className='m-1' id={id} variant="outline-dark" onClick={fnHandle}>{city}</Button>
     )
 }
 

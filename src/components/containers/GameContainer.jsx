@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import getCC from '../../models/getCC'
 import Options from '../../models/options.class'
 import Flag from '../pures/Flag'
@@ -97,43 +97,54 @@ function GameContainer() {
 
     return (
         <>
+            <Row>
+                <Form.Group controlId="formBasicCheckbox">
+                    <Form.Check id='sound' onChange={handlerSound} type="checkbox" label={s ? '🔊📳' : '🔇📴'} />
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check id='sound' onChange={handlerSound} type="checkbox" label={s ? '🔊📳' : '🔇📴'} />
-            </Form.Group>
+            </Row>
+
+            <Row className='d-flex justify-content-center align-items-center flex-grow-1'>
+
+                <Col xs={10} sm={10} md={7} lg={6} xl={5} xxl={4} >
+                    <Card bg='light' className="text-center mb-5">
+                        <Card.Header className='fs-5'>What is the capital of
+
+                        </Card.Header>
+
+                        <Card.Body>
+
+                            {Object.entries(correct).length === 0
+                                ?
+                                <>
+                                    🤔mmm...💭
+                                    <hr />
+                                    <Spinner animation="border" variant="dark" />
+                                </>
+                                :
+                                <>
+                                    <Titulo country={correct.country} />
+                                    <Flag flag={correct.flag} />
+                                    <hr />
+
+                                    {
+                                        countries.map((e, i) => < OptButton dis={dis} id={e.capital} fn={gol} key={e + i} city={e.capital} />)
+                                    }
+
+                                </>
+
+                            }
 
 
-            <Card className="text-center">
-                <Card.Header className='fs-3'>What is the capital of
+                        </Card.Body>
 
-                </Card.Header>
+                        <Card.Footer className="text-muted">
+                            Yeah! 😉
+                        </Card.Footer>
 
-                <Card.Body>
-
-                    {Object.entries(correct).length === 0
-                        ?
-                        <><Spinner animation="border" variant="dark" />... 🤔💭 ...</>
-                        :
-                        <>
-                            <Titulo country={correct.country} />
-                            <br />
-                            <Flag flag={correct.flag} />
-                            <hr />
-                            <div>
-                                {
-                                    countries.map((e, i) => < OptButton dis={dis} id={e.capital} fn={gol} key={e + i} city={e.capital} />)
-                                }
-                            </div>
-                        </>
-
-                    }
-
-
-                </Card.Body>
-                <Card.Footer>Points: {points.point}/{points.total} </Card.Footer>
-
-            </Card>
-
+                    </Card>
+                </Col>
+            </Row>
         </>
     )
 }
