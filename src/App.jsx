@@ -5,7 +5,8 @@ import './style.css'
 function App() {
   return (
     <div className='animateme'>
-      <ul class="bg-bubbles">
+
+      <ul className="bg-bubbles">
         <li></li>
         <li></li>
         <li></li>
@@ -20,11 +21,16 @@ function App() {
         <li></li>
         <li></li>
       </ul>
-      <Container className='d-flex min-vh-100 flex-column'
+
+      <Container
+        className='d-flex min-vh-100 flex-column'
         fluid
       >
+
         <GameContainer />
+
       </Container>
+
     </div>
   )
 }
